@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  /* Colors */
+  --white: #fff;
+  --black: #000;
+  --blue: #3532ff;
+  --gray: #585858;
+  --gray2: #808080;
+  --gray3: #a5a5a5;
+  --gray4: #c0c0c0;
+  --gray5: #dedede;
+  --gray6: #ebebeb;
+
+  /* Fonts */
+  --body0: 400 9px/100% "Montserrat", sans-serif;
+  --body1: 400 11px/100% "Montserrat", sans-serif;
+  --body2: 400 13px/100% "Montserrat", sans-serif;
+  --body3: 400 14px/100% "Montserrat", sans-serif;
+  --body4: 550 17px/100% "Montserrat", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Удаление обводки при фокусе */
+:focus,
+:active {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus,
+a:active {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Стили для полосы прокрутки */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--bg-secondary);
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--bg-tertiary);
+}
+
+/* Основные стили */
+html,
+body,
+#root,
+.App {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  background-color: var(--bg-secondary);
+}
+
+html.--noscroll,
+body.--noscroll,
+#root.--noscroll,
+.App.--noscroll {
+  overflow: hidden !important;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font: inherit;
+}
+
+input {
+  border: 0;
+  background: none;
+  outline: none;
+  color: var(--text-primary);
+}
+
+input::placeholder {
+  color: var(--text-placeholder);
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+button {
+  background-color: var(--white);
+  border: 1px solid var(--gray5) !important;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: var(--gray5);
+}
+
+.controlPanel {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  gap: 5px;
+}
+
+.react-flow__attribution {
+  display: none !important;
+}

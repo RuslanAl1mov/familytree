@@ -1,0 +1,61 @@
+.node {
+  width: 160px;
+  height: auto;
+  border-radius: 14px;
+  border: 1px solid var(--gray5);
+  background: var(--white);
+  box-shadow: 0 10px 30px rgba(66, 66, 66, 0.3);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  transition: border-color 0.2s;
+}
+
+.nodeSelected {
+  border-color: var(--black);
+}
+
+.avatar {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  overflow: hidden;
+  flex: 0 0 auto;
+  background: var(--gray6);
+  border: 1px solid var(--gray5);
+}
+
+.avatarImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.textBlock {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.name {
+  width: 100%;
+  text-align: center;
+  min-width: 0;
+  font: var(--body2);
+  font-weight: 500;
+}
+
+.date {
+  width: 100%;
+  margin-top: 4px;
+  text-align: center;
+  font: var(--body0);
+  color: var(--gray);
+  white-space: wrap;
+  text-overflow: ellipsis;
+}
