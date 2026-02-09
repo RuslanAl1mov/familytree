@@ -6,25 +6,58 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('users', '0001_initial'),
+        ("users", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='UserKey',
+            name="UserKey",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('key', models.CharField(max_length=60, unique=True, verbose_name='Key')),
-                ('value', models.CharField(blank=True, max_length=255, null=True, verbose_name='Value')),
-                ('expire_date', models.DateField(verbose_name='Expire date')),
-                ('key_type', models.CharField(choices=[('email_confirm', 'Email confirmation'), ('forgot_passwrod', 'Password recover'), ('registeration', 'Registration')], max_length=20, verbose_name='Key type')),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL, verbose_name='User')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "key",
+                    models.CharField(max_length=60, unique=True, verbose_name="Key"),
+                ),
+                (
+                    "value",
+                    models.CharField(
+                        blank=True, max_length=255, null=True, verbose_name="Value"
+                    ),
+                ),
+                ("expire_date", models.DateField(verbose_name="Expire date")),
+                (
+                    "key_type",
+                    models.CharField(
+                        choices=[
+                            ("email_confirm", "Email confirmation"),
+                            ("forgot_passwrod", "Password recover"),
+                            ("registeration", "Registration"),
+                        ],
+                        max_length=20,
+                        verbose_name="Key type",
+                    ),
+                ),
+                (
+                    "user",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to=settings.AUTH_USER_MODEL,
+                        verbose_name="User",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'User key',
-                'verbose_name_plural': 'Users keys',
+                "verbose_name": "User key",
+                "verbose_name_plural": "Users keys",
             },
         ),
     ]

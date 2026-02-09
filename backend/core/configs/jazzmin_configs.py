@@ -16,11 +16,9 @@ JAZZMIN_SETTINGS = {
     "welcome_sign": "Добро пожаловать в FamilyTree",
     "copyright": "FamilyTree",
     "user_avatar": None,
-
     "topmenu_links": [
         # {"name": "Home", "url": "admin:index", "permissions": ["auth.view_user"]},
     ],
-
     "show_sidebar": True,
     "navigation_expanded": True,
     "hide_apps": [],
