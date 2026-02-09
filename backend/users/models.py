@@ -35,6 +35,7 @@ class User(AbstractUser):
 
 
 class UserKey(models.Model):
+    
     class KeyType(models.TextChoices):
         EMAIL_CONFIRM = "email_confirm", "Email confirmation"
         FORGOT_PASSWORD = "forgot_passwrod", "Password recover"
