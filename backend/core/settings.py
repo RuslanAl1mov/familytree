@@ -14,6 +14,7 @@ import os
 from pathlib import Path
 from datetime import timedelta
 from dotenv import load_dotenv
+from .configs import jazzmin_configs as jazzmin
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -75,6 +76,11 @@ TEMPLATES = [
                 "django.contrib.messages.context_processors.messages",
             ],
         },
+    },
+    {
+        "BACKEND": "django.template.backends.jinja2.Jinja2",
+        "DIRS": ["services/mail_templates/"],
+        "APP_DIRS": True,
     },
 ]
 
@@ -142,12 +148,16 @@ REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "rest_framework.authentication.TokenAuthentication",
         "rest_framework_simplejwt.authentication.JWTAuthentication",
+        "core.configs.auth_backend.AuthBackend",
     ],
     "DEFAULT_PERMISSION_CLASSES": [
         "rest_framework.permissions.IsAuthenticated",
     ],
     "DEFAULT_RENDERER_CLASSES": ["core.configs.renderers.WrappedJSONRenderer"],
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    "PAGE_SIZE": 50,
+    "COERCE_DECIMAL_TO_STRING": False,
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }
 
 if DEBUG:
@@ -188,7 +198,5 @@ STATIC_URL = "static/"
 
 
 # Jazzmin settings
-from .configs import jazzmin_configs as jazzmin
-
 JAZZMIN_SETTINGS = jazzmin.JAZZMIN_SETTINGS
 JAZZMIN_UI_TWEAKS = jazzmin.JAZZMIN_UI_TWEAKS
